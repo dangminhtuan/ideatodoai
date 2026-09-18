@@ -1,61 +1,829 @@
 {
   "projects": [
     {
-      "id": "demo_1",
-      "name": "Dự Án Mẫu (Demo Project)",
-      "folderName": "Demo_Project",
+      "id": "proj_agency_landing_page",
+      "name": "Agency_Landing_Page",
+      "folderName": "Agency_Landing_Page",
       "category": "Web & SaaS",
       "stage": "In Progress - Expanding",
       "tags": [
+        "#NextJS",
         "#React",
-        "#Vite",
+        "#Tailwind",
         "#SaaS"
       ],
       "ideas": [
         {
-          "id": "i1",
-          "text": "Khảo sát nhu cầu người dùng mục tiêu",
-          "status": "Đã xong"
+          "id": "e74b959c",
+          "text": "Gói Setup Phí Tái Thiết Số (35 - 60tr/web) bàn giao sau 3 ngày",
+          "status": "Đang triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
         },
         {
-          "id": "i2",
-          "text": "Thiết kế giao diện 4 cột tối ưu tốc độ",
-          "status": "Đang triển khai"
+          "id": "9feb0a45",
+          "text": "Thuê bao SEO Retainer Nuôi Web AI (6 - 12tr/tháng) tự động 20-30 bài SEO",
+          "status": "Đang triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
         },
         {
-          "id": "i3",
-          "text": "Tích hợp thanh toán tự động",
-          "status": "Chưa triển khai"
+          "id": "762eb121",
+          "text": "Bán License SaaS cho Agency khác bóc tách dữ liệu làm web sỉ",
+          "status": "Chưa triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        },
+        {
+          "id": "3cd8fbc7",
+          "text": "Phí SLA Hosting Next.js Cloud cam kết tốc độ 100/100",
+          "status": "Đã xong",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        },
+        {
+          "id": "487403a6",
+          "text": "AI Chatbot RAG 24/7 đọc hiểu tri thức llms.txt thu thập Lead bán hàng",
+          "status": "Đang triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        },
+        {
+          "id": "787fe02b",
+          "text": "Auto-Marketing OTT tự động bắn tin sang Zalo OA & Telegram",
+          "status": "Chưa triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        },
+        {
+          "id": "d4734b07",
+          "text": "Content Repurposing Engine tự động phân rã bài viết sang Threads & Facebook",
+          "status": "Chưa triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        },
+        {
+          "id": "39ed33a5",
+          "text": "B2B Lead Scraping & Intelligence Engine cào SĐT, Email từ Web & Facebook",
+          "status": "Chưa triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
         }
       ],
-      "createdAt": "2026-09-18T14:00:00.000Z",
-      "updatedAt": "2026-09-18T14:00:00.000Z"
+      "createdAt": "2026-09-18T13:51:03.387107",
+      "updatedAt": "2026-09-18T13:51:03.387107"
     },
     {
-      "id": "demo_2",
-      "name": "AI Personal Assistant",
-      "folderName": "AI_Assistant",
+      "id": "proj_auto_antigravity",
+      "name": "Auto Antigravity",
+      "folderName": "Auto Antigravity",
+      "category": "AI & Automation",
+      "stage": "In Progress - Expanding",
+      "tags": [
+        "#AI",
+        "#Agent",
+        "#Automation",
+        "#LLM"
+      ],
+      "ideas": [
+        {
+          "id": "232600dd",
+          "text": "Khởi tạo và hoàn thiện chức năng cốt lõi cho Auto Antigravity",
+          "status": "Đang triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        }
+      ],
+      "createdAt": "2026-09-18T13:51:03.387107",
+      "updatedAt": "2026-09-18T13:51:03.387107"
+    },
+    {
+      "id": "proj_auto_content_for_websites",
+      "name": "Auto content for websites",
+      "folderName": "Auto content for websites",
+      "category": "AI & Automation",
+      "stage": "Just Started / Inception",
+      "tags": [
+        "#AI",
+        "#Agent",
+        "#Automation",
+        "#LLM"
+      ],
+      "ideas": [
+        {
+          "id": "225533c5",
+          "text": "Khởi tạo và hoàn thiện chức năng cốt lõi cho Auto content for websites",
+          "status": "Đang triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        }
+      ],
+      "createdAt": "2026-09-18T13:51:03.387107",
+      "updatedAt": "2026-09-18T13:51:03.387107"
+    },
+    {
+      "id": "proj_crawler",
+      "name": "Crawler",
+      "folderName": "Crawler",
+      "category": "AI & Automation",
+      "stage": "Just Started / Inception",
+      "tags": [
+        "#AI",
+        "#Agent",
+        "#Automation",
+        "#LLM"
+      ],
+      "ideas": [
+        {
+          "id": "05277532",
+          "text": "Khởi tạo và hoàn thiện chức năng cốt lõi cho Crawler",
+          "status": "Đang triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        }
+      ],
+      "createdAt": "2026-09-18T13:51:03.387107",
+      "updatedAt": "2026-09-18T13:51:03.387107"
+    },
+    {
+      "id": "proj_dmt_data",
+      "name": "DMT Data",
+      "folderName": "DMT Data",
+      "category": "Personal Utilities",
+      "stage": "Idea / Conceptual",
+      "tags": [
+        "#Tool",
+        "#Productivity"
+      ],
+      "ideas": [
+        {
+          "id": "0ff2261b",
+          "text": "Khởi tạo và hoàn thiện chức năng cốt lõi cho DMT Data",
+          "status": "Chưa triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        }
+      ],
+      "createdAt": "2026-09-18T13:51:03.387107",
+      "updatedAt": "2026-09-18T13:51:03.387107"
+    },
+    {
+      "id": "proj_danh_van_tieng_anh",
+      "name": "Danh Van Tieng Anh",
+      "folderName": "Danh Van Tieng Anh",
+      "category": "Education & Training",
+      "stage": "In Progress - Expanding",
+      "tags": [
+        "#Education",
+        "#Learning",
+        "#Fullstack"
+      ],
+      "ideas": [
+        {
+          "id": "ffd85ece",
+          "text": "Khởi tạo và hoàn thiện chức năng cốt lõi cho Danh Van Tieng Anh",
+          "status": "Đang triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        }
+      ],
+      "createdAt": "2026-09-18T13:51:03.387107",
+      "updatedAt": "2026-09-18T13:51:03.387107"
+    },
+    {
+      "id": "proj_finish_what_i_started",
+      "name": "Finish What I Started",
+      "folderName": "Finish What I Started",
+      "category": "Personal Utilities",
+      "stage": "Near Complete - Polishing",
+      "tags": [
+        "#Tool",
+        "#Productivity"
+      ],
+      "ideas": [
+        {
+          "id": "21f6a327",
+          "text": "Fix quệt chữ 'a' thành 'á' thay vì 'à' do mép viền trái",
+          "status": "Chưa triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        },
+        {
+          "id": "c0a8d035",
+          "text": "Tái cấu trúc vần: 'g' -> 'au', 'l' -> 'êu', xóa bỏ 'oe'",
+          "status": "Chưa triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        },
+        {
+          "id": "0c4051d4",
+          "text": "Siêu phím phụ âm 'm' quệt ra phụ âm kép (th, tr, nh, kh, ph)",
+          "status": "Chưa triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        },
+        {
+          "id": "9c37ef83",
+          "text": "Backspace trượt động đa từ: quẹt ngắn xóa 1 từ, trượt dài xóa lũy tiến",
+          "status": "Chưa triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        },
+        {
+          "id": "68389762",
+          "text": "Double-tap Shift -> Caps Lock viết HOA cố định",
+          "status": "Đang triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        },
+        {
+          "id": "09f22344",
+          "text": "Double-tap Mode -> Giữ nguyên Mode",
+          "status": "Đang triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        },
+        {
+          "id": "17f16387",
+          "text": "Haptic Feedback: Rung nhẹ khi ngón tay đạt ngưỡng quệt flick",
+          "status": "Chưa triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        },
+        {
+          "id": "e32d64b8",
+          "text": "Flick Compass HUD: La bàn 6 hướng mini nổi trên đầu ngón tay",
+          "status": "Chưa triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        }
+      ],
+      "createdAt": "2026-09-18T13:51:03.387107",
+      "updatedAt": "2026-09-18T13:51:03.387107"
+    },
+    {
+      "id": "proj_finish_working",
+      "name": "Finish Working",
+      "folderName": "Finish Working",
+      "category": "Personal Utilities",
+      "stage": "Idea / Conceptual",
+      "tags": [
+        "#Tool",
+        "#Productivity"
+      ],
+      "ideas": [
+        {
+          "id": "51bc8cce",
+          "text": "Khởi tạo và hoàn thiện chức năng cốt lõi cho Finish Working",
+          "status": "Chưa triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        }
+      ],
+      "createdAt": "2026-09-18T13:51:03.387107",
+      "updatedAt": "2026-09-18T13:51:03.387107"
+    },
+    {
+      "id": "proj_fun_chess",
+      "name": "Fun Chess",
+      "folderName": "Fun Chess",
+      "category": "Game & Entertainment",
+      "stage": "Idea / Conceptual",
+      "tags": [
+        "#Game",
+        "#Frontend",
+        "#Canvas"
+      ],
+      "ideas": [
+        {
+          "id": "c955236c",
+          "text": "Khởi tạo và hoàn thiện chức năng cốt lõi cho Fun Chess",
+          "status": "Chưa triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        }
+      ],
+      "createdAt": "2026-09-18T13:51:03.387107",
+      "updatedAt": "2026-09-18T13:51:03.387107"
+    },
+    {
+      "id": "proj_funny_games",
+      "name": "Funny Games",
+      "folderName": "Funny Games",
+      "category": "Game & Entertainment",
+      "stage": "Idea / Conceptual",
+      "tags": [
+        "#Game",
+        "#Frontend",
+        "#Canvas"
+      ],
+      "ideas": [
+        {
+          "id": "c9512a09",
+          "text": "Khởi tạo và hoàn thiện chức năng cốt lõi cho Funny Games",
+          "status": "Chưa triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        }
+      ],
+      "createdAt": "2026-09-18T13:51:03.387107",
+      "updatedAt": "2026-09-18T13:51:03.387107"
+    },
+    {
+      "id": "proj_game_town_city",
+      "name": "Game Town City",
+      "folderName": "Game Town City",
+      "category": "Game & Entertainment",
+      "stage": "In Progress - Expanding",
+      "tags": [
+        "#Game",
+        "#Frontend",
+        "#Canvas"
+      ],
+      "ideas": [
+        {
+          "id": "88b1ea4e",
+          "text": "Khởi tạo và hoàn thiện chức năng cốt lõi cho Game Town City",
+          "status": "Đang triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        }
+      ],
+      "createdAt": "2026-09-18T13:51:03.387107",
+      "updatedAt": "2026-09-18T13:51:03.387107"
+    },
+    {
+      "id": "proj_garmin_app",
+      "name": "Garmin App",
+      "folderName": "Garmin App",
+      "category": "General",
+      "stage": "In Progress - Expanding",
+      "tags": [
+        "#Project"
+      ],
+      "ideas": [
+        {
+          "id": "7f233d66",
+          "text": "Khởi tạo và hoàn thiện chức năng cốt lõi cho Garmin App",
+          "status": "Đang triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        }
+      ],
+      "createdAt": "2026-09-18T13:51:03.387107",
+      "updatedAt": "2026-09-18T13:51:03.387107"
+    },
+    {
+      "id": "proj_make_ebooks_and_website",
+      "name": "Make ebooks and website",
+      "folderName": "Make ebooks and website",
+      "category": "Web & SaaS",
+      "stage": "Just Started / Inception",
+      "tags": [
+        "#NextJS",
+        "#React",
+        "#Tailwind",
+        "#SaaS"
+      ],
+      "ideas": [
+        {
+          "id": "8f4e1fec",
+          "text": "Khởi tạo và hoàn thiện chức năng cốt lõi cho Make ebooks and website",
+          "status": "Đang triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        }
+      ],
+      "createdAt": "2026-09-18T13:51:03.387107",
+      "updatedAt": "2026-09-18T13:51:03.387107"
+    },
+    {
+      "id": "proj_marketing",
+      "name": "Marketing",
+      "folderName": "Marketing",
+      "category": "Marketing & Social",
+      "stage": "Just Started / Inception",
+      "tags": [
+        "#Marketing",
+        "#SocialMedia",
+        "#Content"
+      ],
+      "ideas": [
+        {
+          "id": "bffa9d79",
+          "text": "Khởi tạo và hoàn thiện chức năng cốt lõi cho Marketing",
+          "status": "Đang triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        }
+      ],
+      "createdAt": "2026-09-18T13:51:03.387107",
+      "updatedAt": "2026-09-18T13:51:03.387107"
+    },
+    {
+      "id": "proj_multi_level_gg_antigravity_network",
+      "name": "Multi Level GG Antigravity Network",
+      "folderName": "Multi Level GG Antigravity Network",
       "category": "AI & Automation",
       "stage": "Idea / Conceptual",
       "tags": [
         "#AI",
-        "#LLM",
-        "#Python"
+        "#Agent",
+        "#Automation",
+        "#LLM"
       ],
       "ideas": [
         {
-          "id": "i4",
-          "text": "Nghiên cứu Prompt Chaining và RAG",
-          "status": "Chưa triển khai"
-        },
-        {
-          "id": "i5",
-          "text": "Tự động thông báo qua Telegram",
-          "status": "Chưa triển khai"
+          "id": "4668d0f1",
+          "text": "Khởi tạo và hoàn thiện chức năng cốt lõi cho Multi Level GG Antigravity Network",
+          "status": "Chưa triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
         }
       ],
-      "createdAt": "2026-09-18T14:00:00.000Z",
-      "updatedAt": "2026-09-18T14:00:00.000Z"
+      "createdAt": "2026-09-18T13:51:03.387107",
+      "updatedAt": "2026-09-18T13:51:03.387107"
+    },
+    {
+      "id": "proj_nghich_ngom_giam_stress",
+      "name": "Nghich ngom giam stress",
+      "folderName": "Nghich ngom giam stress",
+      "category": "Personal Utilities",
+      "stage": "Idea / Conceptual",
+      "tags": [
+        "#Tool",
+        "#Productivity"
+      ],
+      "ideas": [
+        {
+          "id": "6506cb12",
+          "text": "Khởi tạo và hoàn thiện chức năng cốt lõi cho Nghich ngom giam stress",
+          "status": "Chưa triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        }
+      ],
+      "createdAt": "2026-09-18T13:51:03.387107",
+      "updatedAt": "2026-09-18T13:51:03.387107"
+    },
+    {
+      "id": "proj_reading_books_and_tools_for_reading",
+      "name": "Reading Books and Tools for Reading",
+      "folderName": "Reading Books and Tools for Reading",
+      "category": "Education & Training",
+      "stage": "Idea / Conceptual",
+      "tags": [
+        "#Education",
+        "#Learning",
+        "#Fullstack"
+      ],
+      "ideas": [
+        {
+          "id": "63bc2c73",
+          "text": "Khởi tạo và hoàn thiện chức năng cốt lõi cho Reading Books and Tools for Reading",
+          "status": "Chưa triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        }
+      ],
+      "createdAt": "2026-09-18T13:51:03.387107",
+      "updatedAt": "2026-09-18T13:51:03.387107"
+    },
+    {
+      "id": "proj_social_clone",
+      "name": "Social Clone",
+      "folderName": "Social Clone",
+      "category": "Marketing & Social",
+      "stage": "Idea / Conceptual",
+      "tags": [
+        "#Marketing",
+        "#SocialMedia",
+        "#Content"
+      ],
+      "ideas": [
+        {
+          "id": "a436685a",
+          "text": "Khởi tạo và hoàn thiện chức năng cốt lõi cho Social Clone",
+          "status": "Chưa triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        }
+      ],
+      "createdAt": "2026-09-18T13:51:03.387107",
+      "updatedAt": "2026-09-18T13:51:03.387107"
+    },
+    {
+      "id": "proj_studying_tools",
+      "name": "Studying Tools",
+      "folderName": "Studying Tools",
+      "category": "Education & Training",
+      "stage": "Idea / Conceptual",
+      "tags": [
+        "#Education",
+        "#Learning",
+        "#Fullstack"
+      ],
+      "ideas": [
+        {
+          "id": "68de91da",
+          "text": "Khởi tạo và hoàn thiện chức năng cốt lõi cho Studying Tools",
+          "status": "Chưa triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        }
+      ],
+      "createdAt": "2026-09-18T13:51:03.387107",
+      "updatedAt": "2026-09-18T13:51:03.387107"
+    },
+    {
+      "id": "proj_suggest_and_review_contracts",
+      "name": "Suggest and Review Contracts",
+      "folderName": "Suggest and Review Contracts",
+      "category": "Personal Utilities",
+      "stage": "Just Started / Inception",
+      "tags": [
+        "#Tool",
+        "#Productivity"
+      ],
+      "ideas": [
+        {
+          "id": "f3ff412a",
+          "text": "Khởi tạo và hoàn thiện chức năng cốt lõi cho Suggest and Review Contracts",
+          "status": "Đang triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        }
+      ],
+      "createdAt": "2026-09-18T13:51:03.387107",
+      "updatedAt": "2026-09-18T13:51:03.387107"
+    },
+    {
+      "id": "proj_take_my_facebook_back",
+      "name": "Take My Facebook Back",
+      "folderName": "Take My Facebook Back",
+      "category": "Web & SaaS",
+      "stage": "Idea / Conceptual",
+      "tags": [
+        "#NextJS",
+        "#React",
+        "#Tailwind",
+        "#SaaS"
+      ],
+      "ideas": [
+        {
+          "id": "4238d347",
+          "text": "Khởi tạo và hoàn thiện chức năng cốt lõi cho Take My Facebook Back",
+          "status": "Chưa triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        }
+      ],
+      "createdAt": "2026-09-18T13:51:03.387107",
+      "updatedAt": "2026-09-18T13:51:03.387107"
+    },
+    {
+      "id": "proj_thuc_tap_chuyen_nganh_ehou",
+      "name": "Thuc Tap Chuyen Nganh EHOU",
+      "folderName": "Thuc Tap Chuyen Nganh EHOU",
+      "category": "Education & Training",
+      "stage": "In Progress - Expanding",
+      "tags": [
+        "#Education",
+        "#Learning",
+        "#Fullstack"
+      ],
+      "ideas": [
+        {
+          "id": "b0a93987",
+          "text": "Khởi tạo và hoàn thiện chức năng cốt lõi cho Thuc Tap Chuyen Nganh EHOU",
+          "status": "Đang triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        }
+      ],
+      "createdAt": "2026-09-18T13:51:03.387107",
+      "updatedAt": "2026-09-18T13:51:03.387107"
+    },
+    {
+      "id": "proj__general_info_for_all_projects",
+      "name": "_General Info for All Projects",
+      "folderName": "_General Info for All Projects",
+      "category": "Personal Utilities",
+      "stage": "Near Complete - Polishing",
+      "tags": [
+        "#Tool",
+        "#Productivity"
+      ],
+      "ideas": [
+        {
+          "id": "925fbc2f",
+          "text": "Khởi tạo và hoàn thiện chức năng cốt lõi cho _General Info for All Projects",
+          "status": "Đang triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        }
+      ],
+      "createdAt": "2026-09-18T13:51:03.387107",
+      "updatedAt": "2026-09-18T13:51:03.387107"
+    },
+    {
+      "id": "proj__learn_google_antigravity",
+      "name": "_Learn Google AntiGravity",
+      "folderName": "_Learn Google AntiGravity",
+      "category": "AI & Automation",
+      "stage": "Near Complete - Polishing",
+      "tags": [
+        "#AI",
+        "#Agent",
+        "#Automation",
+        "#LLM"
+      ],
+      "ideas": [
+        {
+          "id": "5a7d033a",
+          "text": "Khởi tạo và hoàn thiện chức năng cốt lõi cho _Learn Google AntiGravity",
+          "status": "Đang triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        }
+      ],
+      "createdAt": "2026-09-18T13:51:03.387107",
+      "updatedAt": "2026-09-18T13:51:03.387107"
+    },
+    {
+      "id": "proj__repair_my_phone",
+      "name": "_Repair my phone",
+      "folderName": "_Repair my phone",
+      "category": "AI & Automation",
+      "stage": "Near Complete - Polishing",
+      "tags": [
+        "#AI",
+        "#Agent",
+        "#Automation",
+        "#LLM"
+      ],
+      "ideas": [
+        {
+          "id": "a0c5d242",
+          "text": "Khởi tạo và hoàn thiện chức năng cốt lõi cho _Repair my phone",
+          "status": "Đang triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        }
+      ],
+      "createdAt": "2026-09-18T13:51:03.387107",
+      "updatedAt": "2026-09-18T13:51:03.387107"
+    },
+    {
+      "id": "proj__server_hosting",
+      "name": "_Server Hosting",
+      "folderName": "_Server Hosting",
+      "category": "Web & SaaS",
+      "stage": "Near Complete - Polishing",
+      "tags": [
+        "#NextJS",
+        "#React",
+        "#Tailwind",
+        "#SaaS"
+      ],
+      "ideas": [
+        {
+          "id": "0ae4f751",
+          "text": "Khởi tạo và hoàn thiện chức năng cốt lõi cho _Server Hosting",
+          "status": "Đang triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        }
+      ],
+      "createdAt": "2026-09-18T13:51:03.387107",
+      "updatedAt": "2026-09-18T13:51:03.387107"
+    },
+    {
+      "id": "proj___big_ideas",
+      "name": "AnyMacroPad (__Big Ideas)",
+      "folderName": "__Big Ideas",
+      "category": "General",
+      "stage": "In Progress - Expanding",
+      "tags": [
+        "#Project"
+      ],
+      "ideas": [
+        {
+          "id": "dd17cf86",
+          "text": "Phần mềm Map phím đa nền tảng (Bluetooth/External Keyboard Mapper)",
+          "status": "Đang triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        },
+        {
+          "id": "630abbcc",
+          "text": "Nhận diện ID bàn phím ngoài != 1 trên Windows",
+          "status": "Đã xong",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        },
+        {
+          "id": "d671879a",
+          "text": "Tính năng Gõ Tắt (Text Expansion / Macro): gõ 'm' -> in ra 'GM' + Enter",
+          "status": "Chưa triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        }
+      ],
+      "createdAt": "2026-09-18T13:51:03.387107",
+      "updatedAt": "2026-09-18T13:51:03.387107"
+    },
+    {
+      "id": "proj___g_ag_test",
+      "name": "__G AG Test",
+      "folderName": "__G AG Test",
+      "category": "Personal Utilities",
+      "stage": "Near Complete - Polishing",
+      "tags": [
+        "#Tool",
+        "#Productivity"
+      ],
+      "ideas": [
+        {
+          "id": "e8f4cbd3",
+          "text": "Khởi tạo và hoàn thiện chức năng cốt lõi cho __G AG Test",
+          "status": "Đang triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        }
+      ],
+      "createdAt": "2026-09-18T13:51:03.387107",
+      "updatedAt": "2026-09-18T13:51:03.387107"
+    },
+    {
+      "id": "proj___g_ag_utilities",
+      "name": "__G AG Utilities",
+      "folderName": "__G AG Utilities",
+      "category": "Personal Utilities",
+      "stage": "Near Complete - Polishing",
+      "tags": [
+        "#Tool",
+        "#Productivity"
+      ],
+      "ideas": [
+        {
+          "id": "73bfa90c",
+          "text": "Khởi tạo và hoàn thiện chức năng cốt lõi cho __G AG Utilities",
+          "status": "Đang triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        }
+      ],
+      "createdAt": "2026-09-18T13:51:03.387107",
+      "updatedAt": "2026-09-18T13:51:03.387107"
+    },
+    {
+      "id": "proj_hoctudau_1day_1web",
+      "name": "hoctudau 1day 1web",
+      "folderName": "hoctudau 1day 1web",
+      "category": "Web & SaaS",
+      "stage": "Idea / Conceptual",
+      "tags": [
+        "#NextJS",
+        "#React",
+        "#Tailwind",
+        "#SaaS"
+      ],
+      "ideas": [
+        {
+          "id": "41ce4e47",
+          "text": "Khởi tạo và hoàn thiện chức năng cốt lõi cho hoctudau 1day 1web",
+          "status": "Chưa triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        }
+      ],
+      "createdAt": "2026-09-18T13:51:03.387107",
+      "updatedAt": "2026-09-18T13:51:03.387107"
+    },
+    {
+      "id": "proj_retro_game_clone_ai",
+      "name": "retro-game-clone-ai",
+      "folderName": "retro-game-clone-ai",
+      "category": "AI & Automation",
+      "stage": "In Progress - Expanding",
+      "tags": [
+        "#AI",
+        "#Agent",
+        "#Automation",
+        "#LLM"
+      ],
+      "ideas": [
+        {
+          "id": "1c78537f",
+          "text": "Khởi tạo và hoàn thiện chức năng cốt lõi cho retro-game-clone-ai",
+          "status": "Đang triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        }
+      ],
+      "createdAt": "2026-09-18T13:51:03.387107",
+      "updatedAt": "2026-09-18T13:51:03.387107"
+    },
+    {
+      "id": "proj_vsecretnote_hkc_20260815",
+      "name": "vsecretnote_hkC_20260815",
+      "folderName": "vsecretnote_hkC_20260815",
+      "category": "Desktop & Hardware",
+      "stage": "Near Complete - Polishing",
+      "tags": [
+        "#Rust",
+        "#Tauri",
+        "#Keyboard",
+        "#Windows"
+      ],
+      "ideas": [
+        {
+          "id": "528d236f",
+          "text": "Hoàn thiện Lõi Đa Ngôn Ngữ (All-in-One): Tiếng Hàn (Unicode) & Tiếng Trung (Âm Hán Việt)",
+          "status": "Chưa triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        },
+        {
+          "id": "506d898c",
+          "text": "Giao diện Gboard-style UI chuyển đổi ngôn ngữ (VN, EN, CN, KR)",
+          "status": "Đang triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        },
+        {
+          "id": "a22a8ac1",
+          "text": "Mật khẩu & Mã Hóa Base60 tích hợp quản lý sinh mật khẩu",
+          "status": "Đang triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        },
+        {
+          "id": "eb323865",
+          "text": "Giao diện người dùng chống nhìn trộm (Anti-Shoulder-Surfing)",
+          "status": "Chưa triển khai",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        },
+        {
+          "id": "98b11c14",
+          "text": "Loại bỏ nút 'Đóng' thừa thãi khi chỉ cần bấm nút 'Û' để toggle",
+          "status": "Loại bỏ",
+          "createdAt": "2026-09-18T13:51:03.387107"
+        }
+      ],
+      "createdAt": "2026-09-18T13:51:03.387107",
+      "updatedAt": "2026-09-18T13:51:03.387107"
     }
   ],
   "categories": [

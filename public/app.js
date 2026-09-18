@@ -54,6 +54,12 @@ function persistLocal() {
 async function loadData() {
   const syncLabel = document.getElementById('syncLabel');
   const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+  
+  // Allow ?reload=1 or ?reset=1 in URL to force refresh from projects_data.json
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('reload') === '1' || urlParams.get('reset') === '1') {
+    localStorage.removeItem('ag_projects_matrix');
+  }
 
   // 1. If on Localhost, always sync with Second Brain Node.js API
   if (isLocal) {
