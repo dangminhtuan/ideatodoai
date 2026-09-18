@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>AG Project & Idea Matrix</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +16,7 @@
       <div class="logo-icon">🚀</div>
       <div class="brand-text">
         <h1>AG Project & Idea Matrix</h1>
-        <span class="subtext">d:\__G AG Projects &bull; D:\AI_Second_Brain</span>
+        <span class="subtext">d:\__G AG Projects &bull; ideatodoai</span>
       </div>
     </div>
 
@@ -26,11 +26,20 @@
     </div>
 
     <div class="header-actions">
-      <button class="btn btn-secondary btn-sm" id="btnRescan" title="Quét thêm các thư mục mới trong d:\__G AG Projects">
-        🔄 Quét Dự Án AG
+      <!-- EXPORT / IMPORT FOR PRIVACY & MOBILE SYNC -->
+      <button class="btn btn-secondary btn-xs" id="btnExportJson" title="Xuất dữ liệu ra file JSON để sao lưu">
+        📤 Xuất JSON
       </button>
-      <div class="sync-pill" title="Tự động đồng bộ với Second Brain">
-        <span class="sync-dot"></span> Synced Second Brain
+      <label class="btn btn-secondary btn-xs" title="Nhập dữ liệu JSON cá nhân từ máy/điện thoại" style="cursor: pointer;">
+        📥 Nhập JSON
+        <input type="file" id="importFileInput" accept=".json" style="display: none;">
+      </label>
+
+      <button class="btn btn-secondary btn-xs" id="btnRescan" title="Quét thêm các thư mục mới trong d:\__G AG Projects (chỉ khả dụng trên Localhost)">
+        🔄 Quét AG
+      </button>
+      <div class="sync-pill" id="syncIndicator" title="Trạng thái lưu trữ">
+        <span class="sync-dot"></span> <span id="syncLabel">Local Storage</span>
       </div>
     </div>
   </header>
@@ -39,46 +48,48 @@
   <section class="control-bar">
     <div class="search-box">
       <span class="search-icon">🔍</span>
-      <input type="text" id="searchInput" placeholder="Tìm kiếm nhanh dự án, tag, ý tưởng... (gõ là lọc)" autocomplete="off">
+      <input type="text" id="searchInput" placeholder="Tìm kiếm nhanh dự án, tag, ý tưởng..." autocomplete="off">
       <button id="btnClearSearch" class="btn-icon hidden" title="Xóa tìm kiếm">✕</button>
     </div>
 
-    <div class="filter-group">
-      <label>Category:</label>
-      <select id="categoryFilter">
-        <option value="ALL">Tất cả danh mục (All)</option>
-      </select>
-    </div>
+    <div class="filters-wrap">
+      <div class="filter-group">
+        <label>Category:</label>
+        <select id="categoryFilter">
+          <option value="ALL">Tất cả (All)</option>
+        </select>
+      </div>
 
-    <div class="filter-group">
-      <label>Stage:</label>
-      <select id="stageFilter">
-        <option value="ALL">Tất cả giai đoạn (All)</option>
-        <option value="Idea / Conceptual">🟣 Idea / Conceptual</option>
-        <option value="Just Started / Inception">🔵 Just Started / Inception</option>
-        <option value="In Progress - Expanding">🟠 In Progress - Expanding</option>
-        <option value="Near Complete - Polishing">🟡 Near Complete - Polishing</option>
-        <option value="Ready for Promotion / Launch">🟢 Ready for Promotion / Launch</option>
-      </select>
-    </div>
+      <div class="filter-group">
+        <label>Stage:</label>
+        <select id="stageFilter">
+          <option value="ALL">Tất cả giai đoạn (All)</option>
+          <option value="Idea / Conceptual">🟣 Idea</option>
+          <option value="Just Started / Inception">🔵 Just Started</option>
+          <option value="In Progress - Expanding">🟠 In Progress</option>
+          <option value="Near Complete - Polishing">🟡 Polishing</option>
+          <option value="Ready for Promotion / Launch">🟢 Launch Ready</option>
+        </select>
+      </div>
 
-    <div class="filter-group">
-      <label>Idea Status:</label>
-      <select id="ideaStatusFilter">
-        <option value="ALL">Tất cả ý tưởng</option>
-        <option value="Chưa triển khai">⚪ Chưa triển khai</option>
-        <option value="Đang triển khai">🟡 Đang triển khai</option>
-        <option value="Đã xong">🟢 Đã xong</option>
-        <option value="Loại bỏ">🔴 Loại bỏ</option>
-      </select>
+      <div class="filter-group">
+        <label>Idea:</label>
+        <select id="ideaStatusFilter">
+          <option value="ALL">Tất cả ý tưởng</option>
+          <option value="Chưa triển khai">⚪ Chưa làm</option>
+          <option value="Đang triển khai">🟡 Đang làm</option>
+          <option value="Đã xong">🟢 Đã xong</option>
+          <option value="Loại bỏ">🔴 Loại bỏ</option>
+        </select>
+      </div>
     </div>
 
     <button class="btn btn-primary btn-sm" id="btnToggleAddProject">
-      + Thêm Dự Án Mới
+      + Thêm Dự Án
     </button>
   </section>
 
-  <!-- INLINE QUICK ADD PROJECT (COLLAPSIBLE / FAST INPUT) -->
+  <!-- INLINE QUICK ADD PROJECT (COLLAPSIBLE) -->
   <section class="quick-add-section hidden" id="quickAddSection">
     <form id="addProjectForm" class="quick-add-form">
       <div class="form-row">
@@ -98,11 +109,11 @@
         <div class="form-field stage-field">
           <label>Giai đoạn:</label>
           <select id="newProjStage">
-            <option value="Idea / Conceptual">🟣 Idea / Conceptual (Ý tưởng)</option>
-            <option value="Just Started / Inception">🔵 Just Started / Inception (Mới bắt đầu)</option>
-            <option value="In Progress - Expanding" selected>🟠 In Progress - Expanding (Đang làm nhiều)</option>
-            <option value="Near Complete - Polishing">🟡 Near Complete - Polishing (Gần hoàn chỉnh)</option>
-            <option value="Ready for Promotion / Launch">🟢 Ready for Promotion / Launch (Sẵn sàng quảng bá)</option>
+            <option value="Idea / Conceptual">🟣 Idea / Conceptual</option>
+            <option value="Just Started / Inception">🔵 Just Started / Inception</option>
+            <option value="In Progress - Expanding" selected>🟠 In Progress - Expanding</option>
+            <option value="Near Complete - Polishing">🟡 Near Complete - Polishing</option>
+            <option value="Ready for Promotion / Launch">🟢 Ready for Promotion / Launch</option>
           </select>
         </div>
 
@@ -112,7 +123,7 @@
         </div>
 
         <div class="form-field idea-field">
-          <label>Ý tưởng / Todo ban đầu:</label>
+          <label>Ý tưởng ban đầu:</label>
           <input type="text" id="newProjInitialIdea" placeholder="Ý tưởng cốt lõi cần làm đầu tiên...">
         </div>
 
@@ -124,26 +135,31 @@
     </form>
   </section>
 
-  <!-- 4-COLUMN HIGH DENSITY MASTER MATRIX -->
+  <!-- 4-COLUMN (DESKTOP) / 2-COLUMN (MOBILE) MATRIX BOARD -->
   <main class="matrix-container">
-    <table class="matrix-table" id="matrixTable">
-      <thead>
-        <tr>
-          <th style="width: 14%;">CỘT 1: CATEGORY</th>
-          <th style="width: 25%;">CỘT 2: TÊN DỰ ÁN &amp; GIAI ĐOẠN</th>
-          <th style="width: 16%;">CỘT 3: TAGS PHÂN LOẠI</th>
-          <th style="width: 45%;">CỘT 4: CÁC Ý TƯỞNG &amp; TRẠNG THÁI</th>
-        </tr>
-      </thead>
-      <tbody id="matrixBody">
-        <!-- Rows rendered dynamically -->
-      </tbody>
-    </table>
+    <!-- Desktop Header (4 Columns) -->
+    <div class="matrix-header-desktop">
+      <div class="hdr-col hdr-cat">CỘT 1: CATEGORY</div>
+      <div class="hdr-col hdr-proj">CỘT 2: TÊN DỰ ÁN &amp; GIAI ĐOẠN</div>
+      <div class="hdr-col hdr-tags">CỘT 3: TAGS PHÂN LOẠI</div>
+      <div class="hdr-col hdr-ideas">CỘT 4: CÁC Ý TƯỞNG &amp; TRẠNG THÁI</div>
+    </div>
+
+    <!-- Mobile Header (2 Columns) -->
+    <div class="matrix-header-mobile">
+      <div class="hdr-m-col hdr-m-left">CỘT 1: DỰ ÁN &amp; PHÂN LOẠI</div>
+      <div class="hdr-m-col hdr-m-right">CỘT 2: Ý TƯỞNG &amp; TRẠNG THÁI</div>
+    </div>
+
+    <!-- Rows container -->
+    <div class="matrix-rows-container" id="matrixRowsContainer">
+      <!-- Rows rendered dynamically -->
+    </div>
 
     <div id="emptyState" class="empty-state hidden">
       <div class="empty-icon">📂</div>
-      <h3>Không tìm thấy dự án phù hợp với bộ lọc</h3>
-      <p>Hãy thử xóa bớt từ khóa tìm kiếm hoặc chọn "Tất cả" trong bộ lọc.</p>
+      <h3>Chưa có dự án hoặc không tìm thấy</h3>
+      <p>Bấm <strong>+ Thêm Dự Án</strong> hoặc bấm <strong>📥 Nhập JSON</strong> để nạp dữ liệu của bạn.</p>
     </div>
   </main>
 
