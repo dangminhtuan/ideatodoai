@@ -444,8 +444,8 @@ function renderRows() {
     const addIdeaBar = document.createElement('div');
     addIdeaBar.className = 'idea-add-inline';
     addIdeaBar.innerHTML = `
-      <input type="text" placeholder="+ Thêm ý tưởng (Enter)..." autocomplete="off">
-      <button type="button">+</button>
+      <input type="text" placeholder="✍️ Nhập ý tưởng mới vào đây..." autocomplete="off">
+      <button type="button">+ Thêm</button>
     `;
 
     const ideaInput = addIdeaBar.querySelector('input');
