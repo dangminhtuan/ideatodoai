@@ -737,28 +737,6 @@ function setupEventListeners() {
       }
     }
   });
-
-  // Rescan Button
-  document.getElementById('btnRescan').addEventListener('click', async () => {
-    const btn = document.getElementById('btnRescan');
-    if (!state.isLocalServer) {
-      alert('Tính năng quét thư mục tự động yêu cầu chạy máy chủ cục bộ (http://localhost:5199). Trên Cloudflare Pages, Sếp hãy dùng nút Nhập JSON để tải dữ liệu lên nhé!');
-      return;
-    }
-    btn.disabled = true;
-    btn.textContent = '⏳ Quét...';
-    try {
-      const res = await fetch('/api/rescan', { method: 'POST' });
-      const data = await res.json();
-      await loadData();
-      showToast(`Quét xong! Thêm ${data.addedCount} thư mục mới (Tổng: ${data.total})`);
-    } catch (err) {
-      showToast('Lỗi quét: ' + err.message, true);
-    } finally {
-      btn.disabled = false;
-      btn.textContent = '🔄 Quét AG';
-    }
-  });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
