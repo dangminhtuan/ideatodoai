@@ -1000,3 +1000,57 @@ body {
   line-height: 1.4;
   border: 1px solid #1a2333;
 }
+
+/* ==========================================================
+   WELCOME / SAMPLE BANNER
+   ========================================================== */
+.welcome-banner {
+  background: linear-gradient(90deg, rgba(6, 182, 212, 0.15), rgba(15, 23, 42, 0.98) 70%);
+  border-bottom: 1px solid rgba(6, 182, 212, 0.35);
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12px;
+  color: #e2e8f0;
+  transition: all 0.2s ease;
+}
+.welcome-banner.hidden {
+  display: none !important;
+}
+.welcome-banner-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+.welcome-banner-content .welcome-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.welcome-banner-content .welcome-text {
+  line-height: 1.45;
+}
+.welcome-banner-content strong {
+  color: #38bdf8;
+  margin-right: 4px;
+}
+.welcome-banner-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .welcome-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 10px 12px;
+  }
+  .welcome-banner-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}

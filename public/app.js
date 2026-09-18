@@ -55,10 +55,12 @@ async function loadData() {
   const syncLabel = document.getElementById('syncLabel');
   const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
   
-  // Allow ?reload=1 or ?reset=1 in URL to force refresh from projects_data.json
+  // Allow ?reload=1 or ?reset=1 in URL to force refresh from presets
   const urlParams = new URLSearchParams(window.location.search);
   if (urlParams.get('reload') === '1' || urlParams.get('reset') === '1') {
     localStorage.removeItem('ag_projects_matrix');
+    localStorage.removeItem('ag_has_visited');
+    localStorage.removeItem('ag_banner_dismissed');
   }
 
   // 1. If on Localhost, always sync with Second Brain Node.js API
@@ -85,6 +87,9 @@ async function loadData() {
   // 2. On Cloudflare Pages: Check user's own localStorage first (their private data)
   syncLabel.textContent = 'Bộ nhớ máy bạn (Riêng tư)';
   const saved = localStorage.getItem('ag_projects_matrix');
+  const hasVisited = localStorage.getItem('ag_has_visited');
+  const bannerDismissed = localStorage.getItem('ag_banner_dismissed');
+
   if (saved) {
     try {
       const data = JSON.parse(saved);
@@ -93,17 +98,30 @@ async function loadData() {
       updateCategoryDropdowns();
       renderStats();
       renderRows();
+
+      const welcomeBanner = document.getElementById('welcomeBanner');
+      if (welcomeBanner && bannerDismissed !== 'true') {
+        welcomeBanner.classList.remove('hidden');
+      }
       return;
-    } catch (e) {}
+    } catch (e) {
+      console.error('Failed to parse localStorage data:', e);
+    }
   }
 
-  // 3. If brand new visitor on Cloudflare Pages, load clean generic template
+  // 3. Brand new visitor on Cloudflare Pages: load default sample preset
   try {
-    const res2 = await fetch('./projects_data.json');
-    if (res2.ok) {
-      const data2 = await res2.json();
-      state.projects = data2.projects || [];
-      state.categories = data2.categories || [];
+    let initialData = null;
+    if (window.SAMPLE_PRESETS && window.SAMPLE_PRESETS.length > 0) {
+      initialData = window.SAMPLE_PRESETS[0].data;
+    } else {
+      const res2 = await fetch('./projects_data.json');
+      if (res2.ok) initialData = await res2.json();
+    }
+
+    if (initialData) {
+      state.projects = JSON.parse(JSON.stringify(initialData.projects || []));
+      state.categories = JSON.parse(JSON.stringify(initialData.categories || []));
       persistLocal();
       updateCategoryDropdowns();
       renderStats();
@@ -111,6 +129,19 @@ async function loadData() {
     }
   } catch (err) {
     showToast('Không thể tải dữ liệu khởi tạo', true);
+  }
+
+  // Show banner & auto-open modal for brand new visitor
+  const welcomeBanner = document.getElementById('welcomeBanner');
+  if (welcomeBanner && bannerDismissed !== 'true') {
+    welcomeBanner.classList.remove('hidden');
+  }
+
+  if (!hasVisited) {
+    // Automatically open the presets modal so first-time users immediately see sample options
+    setTimeout(() => {
+      openImportModal();
+    }, 300);
   }
 }
 
@@ -653,6 +684,10 @@ function setupEventListeners() {
         if (Array.isArray(imported.projects)) {
           state.projects = imported.projects;
           if (Array.isArray(imported.categories)) state.categories = imported.categories;
+          localStorage.setItem('ag_has_visited', 'true');
+          localStorage.setItem('ag_banner_dismissed', 'true');
+          const banner = document.getElementById('welcomeBanner');
+          if (banner) banner.classList.add('hidden');
           persistLocal();
           updateCategoryDropdowns();
           renderStats();
@@ -695,33 +730,23 @@ function setupEventListeners() {
     showToast('Đã xuất file JSON thành công!');
   });
 
-  // Import JSON (Restore into local browser)
-  const importInput = document.getElementById('importFileInput');
-  importInput.addEventListener('change', (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      try {
-        const imported = JSON.parse(event.target.result);
-        if (Array.isArray(imported.projects)) {
-          state.projects = imported.projects;
-          if (Array.isArray(imported.categories)) state.categories = imported.categories;
-          persistLocal();
-          updateCategoryDropdowns();
-          renderStats();
-          renderRows();
-          showToast(`Đã nhập thành công ${state.projects.length} dự án!`);
-        } else {
-          showToast('File JSON không đúng cấu trúc', true);
-        }
-      } catch (err) {
-        showToast('Lỗi đọc file JSON: ' + err.message, true);
-      }
-    };
-    reader.readAsText(file);
-    importInput.value = '';
-  });
+
+
+  // Welcome / Sample Banner Buttons
+  const btnBannerChoosePreset = document.getElementById('btnBannerChoosePreset');
+  if (btnBannerChoosePreset) {
+    btnBannerChoosePreset.addEventListener('click', openImportModal);
+  }
+
+  const btnDismissBanner = document.getElementById('btnDismissBanner');
+  if (btnDismissBanner) {
+    btnDismissBanner.addEventListener('click', () => {
+      localStorage.setItem('ag_banner_dismissed', 'true');
+      const banner = document.getElementById('welcomeBanner');
+      if (banner) banner.classList.add('hidden');
+      showToast('Đã đóng thông báo.');
+    });
+  }
 
   // Add Category Button
   document.getElementById('btnAddNewCat').addEventListener('click', () => {
@@ -776,6 +801,7 @@ function renderPresetsGrid() {
 }
 
 function applyPreset(preset) {
+  localStorage.setItem('ag_has_visited', 'true');
   state.projects = JSON.parse(JSON.stringify(preset.data.projects));
   state.categories = JSON.parse(JSON.stringify(preset.data.categories));
   persistLocal();
@@ -792,5 +818,6 @@ function openImportModal() {
 }
 
 function closeImportModal() {
+  localStorage.setItem('ag_has_visited', 'true');
   document.getElementById('importModalBackdrop').classList.add('hidden');
 }
