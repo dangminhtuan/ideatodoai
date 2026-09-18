@@ -1,173 +1,104 @@
 {
+  "categories": [
+    "Web & SaaS",
+    "AI & Automation",
+    "Marketing & Social",
+    "Personal Utilities"
+  ],
   "projects": [
     {
-      "id": "demo_saas_platform",
-      "name": "E-Commerce SaaS Platform",
-      "folderName": "Ecommerce_SaaS",
-      "category": "Web & SaaS",
-      "stage": "Near Complete - Polishing",
-      "tags": [
-        "#NextJS",
-        "#Tailwind",
-        "#Stripe",
-        "#Cloudflare"
-      ],
-      "ideas": [
-        {
-          "id": "m1",
-          "text": "Tích hợp cổng thanh toán Stripe & MoMo tự động",
-          "status": "Đã xong"
-        },
-        {
-          "id": "m2",
-          "text": "Tối ưu hóa Core Web Vitals đạt điểm 100/100",
-          "status": "Đang triển khai"
-        },
-        {
-          "id": "m3",
-          "text": "Giao diện quản lý đa cửa hàng cho Merchant",
-          "status": "Chưa triển khai"
-        },
-        {
-          "id": "m4",
-          "text": "Tính năng popup Flash Sale gây phiền người dùng",
-          "status": "Loại bỏ"
-        }
-      ],
-      "createdAt": "2026-09-18T10:00:00.000Z",
-      "updatedAt": "2026-09-18T10:00:00.000Z"
-    },
-    {
-      "id": "demo_ai_assistant",
-      "name": "AI Personal Knowledge Agent",
-      "folderName": "AI_Knowledge_Agent",
+      "id": "p_omflow",
+      "name": "OmniFlow - AI Workflow Automation SaaS",
+      "folderName": "OmniFlow_SaaS",
       "category": "AI & Automation",
       "stage": "In Progress - Expanding",
       "tags": [
-        "#Python",
-        "#RAG",
-        "#LangChain",
-        "#TelegramBot"
+        "#AI",
+        "#NextJS",
+        "#Microservices",
+        "#Stripe"
       ],
       "ideas": [
         {
-          "id": "m5",
-          "text": "Xây dựng vector database ChromaDB đọc hiểu tài liệu PDF",
+          "id": "s1",
+          "text": "Tích hợp webhook thanh toán tự động qua Stripe & MoMo",
           "status": "Đã xong"
         },
         {
-          "id": "m6",
-          "text": "Tự động gửi tóm tắt tin tức mỗi sáng qua Telegram Bot",
+          "id": "s2",
+          "text": "Tối ưu độ trễ phản hồi của AI Agent xuống dưới 250ms",
           "status": "Đang triển khai"
         },
         {
-          "id": "m7",
-          "text": "Tích hợp Voice Assistant nhận diện giọng nói tiếng Việt",
+          "id": "s3",
+          "text": "Xây dựng bảng phân tích chỉ số người dùng (Analytics Dashboard)",
           "status": "Chưa triển khai"
+        },
+        {
+          "id": "s4",
+          "text": "Tính năng popup khảo sát gây phiền khi khách đang thao tác",
+          "status": "Loại bỏ"
         }
-      ],
-      "createdAt": "2026-09-18T10:00:00.000Z",
-      "updatedAt": "2026-09-18T10:00:00.000Z"
+      ]
     },
     {
-      "id": "demo_hardware_tool",
-      "name": "Smart Keyboard Macro Mapper",
-      "folderName": "Smart_Macro_Mapper",
-      "category": "Desktop & Hardware",
+      "id": "p_cloudcost",
+      "name": "CloudCost - Công cụ Tối ưu Hóa Chi Phí AWS",
+      "folderName": "CloudCost_FinOps",
+      "category": "Web & SaaS",
+      "stage": "Near Complete - Polishing",
+      "tags": [
+        "#AWS",
+        "#FinOps",
+        "#Python",
+        "#Serverless"
+      ],
+      "ideas": [
+        {
+          "id": "s5",
+          "text": "Thuật toán quét và cảnh báo tài nguyên EC2/RDS dư thừa",
+          "status": "Đã xong"
+        },
+        {
+          "id": "s6",
+          "text": "Báo cáo đề xuất tiết kiệm ngân sách gửi định kỳ qua Slack",
+          "status": "Đang triển khai"
+        },
+        {
+          "id": "s7",
+          "text": "Tích hợp xuất hóa đơn điện tử cho doanh nghiệp",
+          "status": "Chưa triển khai"
+        }
+      ]
+    },
+    {
+      "id": "p_healthpulse",
+      "name": "HealthPulse - Ứng Dụng Chăm Sóc Sức Khỏe",
+      "folderName": "HealthPulse_Mobile",
+      "category": "Web & SaaS",
       "stage": "Just Started / Inception",
       "tags": [
-        "#Rust",
-        "#Tauri",
-        "#Windows",
-        "#Bluetooth"
+        "#Flutter",
+        "#HealthTech",
+        "#Mobile"
       ],
       "ideas": [
         {
-          "id": "m8",
-          "text": "Lắng nghe sự kiện bàn phím Bluetooth qua Raw Input API",
+          "id": "s8",
+          "text": "Thiết kế bộ Wireframe và Prototype trên Figma",
           "status": "Đã xong"
         },
         {
-          "id": "m9",
-          "text": "Tính năng Text Expansion gõ phím tắt tự điền văn bản",
-          "status": "Chưa triển khai"
-        },
-        {
-          "id": "m10",
-          "text": "Giao diện tinh gọn chạy ngầm khay hệ thống (System Tray)",
-          "status": "Chưa triển khai"
-        }
-      ],
-      "createdAt": "2026-09-18T10:00:00.000Z",
-      "updatedAt": "2026-09-18T10:00:00.000Z"
-    },
-    {
-      "id": "demo_marketing_engine",
-      "name": "Automated B2B Lead Scraping Engine",
-      "folderName": "B2B_Lead_Scraper",
-      "category": "Marketing & Social",
-      "stage": "Idea / Conceptual",
-      "tags": [
-        "#Automation",
-        "#Scraping",
-        "#CRM",
-        "#LeadGen"
-      ],
-      "ideas": [
-        {
-          "id": "m11",
-          "text": "Thu thập data website công ty và trích xuất email doanh nghiệp",
-          "status": "Chưa triển khai"
-        },
-        {
-          "id": "m12",
-          "text": "Đánh giá điểm số SEO và tự động gửi email chào dịch vụ",
-          "status": "Chưa triển khai"
-        }
-      ],
-      "createdAt": "2026-09-18T10:00:00.000Z",
-      "updatedAt": "2026-09-18T10:00:00.000Z"
-    },
-    {
-      "id": "demo_edu_portal",
-      "name": "Online Coding Masterclass Portal",
-      "folderName": "Masterclass_Portal",
-      "category": "Education & Training",
-      "stage": "Ready for Promotion / Launch",
-      "tags": [
-        "#Fullstack",
-        "#LMS",
-        "#InteractiveCode",
-        "#Video"
-      ],
-      "ideas": [
-        {
-          "id": "m13",
-          "text": "Hệ thống bài giảng video kèm trình biên dịch code trực tiếp",
-          "status": "Đã xong"
-        },
-        {
-          "id": "m14",
-          "text": "Cấp chứng chỉ điện tử xác thực bằng mã QR cho học viên",
-          "status": "Đã xong"
-        },
-        {
-          "id": "m15",
-          "text": "Chiến dịch truyền thông ra mắt khóa học trên mạng xã hội",
+          "id": "s9",
+          "text": "Tích hợp đồng bộ dữ liệu bước chân với Apple Health & Google Fit",
           "status": "Đang triển khai"
+        },
+        {
+          "id": "s10",
+          "text": "Xây dựng tính năng nhắc lịch uống thuốc thông minh",
+          "status": "Chưa triển khai"
         }
-      ],
-      "createdAt": "2026-09-18T10:00:00.000Z",
-      "updatedAt": "2026-09-18T10:00:00.000Z"
+      ]
     }
-  ],
-  "categories": [
-    "AI & Automation",
-    "Desktop & Hardware",
-    "Web & SaaS",
-    "Game & Entertainment",
-    "Education & Training",
-    "Marketing & Social",
-    "Personal Utilities"
   ]
 }

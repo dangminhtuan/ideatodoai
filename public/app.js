@@ -631,6 +631,55 @@ function setupEventListeners() {
   });
 
   // Export JSON (Backup / Download)
+  
+  // Modal Open / Close
+  document.getElementById('btnOpenImportModal').addEventListener('click', openImportModal);
+  document.getElementById('btnCloseModal').addEventListener('click', closeImportModal);
+  document.getElementById('importModalBackdrop').addEventListener('click', (e) => {
+    if (e.target.id === 'importModalBackdrop') closeImportModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeImportModal();
+  });
+
+  // Modal File Upload
+  document.getElementById('modalFileInput').addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      try {
+        const imported = JSON.parse(event.target.result);
+        if (Array.isArray(imported.projects)) {
+          state.projects = imported.projects;
+          if (Array.isArray(imported.categories)) state.categories = imported.categories;
+          persistLocal();
+          updateCategoryDropdowns();
+          renderStats();
+          renderRows();
+          closeImportModal();
+          showToast(`Đã nhập thành công ${state.projects.length} dự án của bạn!`);
+        } else {
+          showToast('File JSON không đúng cấu trúc (thiếu mảng projects)', true);
+        }
+      } catch (err) {
+        showToast('Lỗi đọc file JSON: ' + err.message, true);
+      }
+    };
+    reader.readAsText(file);
+    e.target.value = '';
+  });
+
+  // Copy Prompt Button
+  document.getElementById('btnCopyPrompt').addEventListener('click', () => {
+    const text = document.getElementById('promptTextContent').innerText.trim();
+    navigator.clipboard.writeText(text).then(() => {
+      showToast('Đã sao chép Prompt vào bộ nhớ tạm!');
+    }).catch(() => {
+      showToast('Không thể sao chép tự động, hãy bôi đen text để copy', true);
+    });
+  });
+
   document.getElementById('btnExportJson').addEventListener('click', () => {
     const dataStr = JSON.stringify({
       projects: state.projects,
@@ -716,3 +765,54 @@ document.addEventListener('DOMContentLoaded', () => {
   setupEventListeners();
   loadData();
 });
+
+
+// Render Presets inside Modal
+function renderPresetsGrid() {
+  const grid = document.getElementById('presetsGrid');
+  if (!grid || !window.SAMPLE_PRESETS) return;
+  grid.innerHTML = '';
+
+  window.SAMPLE_PRESETS.forEach(preset => {
+    const card = document.createElement('div');
+    card.className = 'preset-card';
+    card.innerHTML = `
+      <div>
+        <div class="preset-header">
+          <span class="preset-icon">${preset.icon}</span>
+          <span class="preset-name">${preset.title}</span>
+        </div>
+        <div class="preset-desc">${preset.desc}</div>
+      </div>
+      <div class="preset-action">
+        <button class="btn btn-secondary btn-xs btn-apply-preset">Áp Dụng Mẫu Này</button>
+      </div>
+    `;
+
+    card.addEventListener('click', () => {
+      applyPreset(preset);
+    });
+
+    grid.appendChild(card);
+  });
+}
+
+function applyPreset(preset) {
+  state.projects = JSON.parse(JSON.stringify(preset.data.projects));
+  state.categories = JSON.parse(JSON.stringify(preset.data.categories));
+  persistLocal();
+  updateCategoryDropdowns();
+  renderStats();
+  renderRows();
+  closeImportModal();
+  showToast(`Đã nạp mẫu: ${preset.title}`);
+}
+
+function openImportModal() {
+  renderPresetsGrid();
+  document.getElementById('importModalBackdrop').classList.remove('hidden');
+}
+
+function closeImportModal() {
+  document.getElementById('importModalBackdrop').classList.add('hidden');
+}
