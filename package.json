@@ -1,0 +1,12 @@
+{
+  "name": "ag-project-idea-tracker",
+  "version": "1.0.0",
+  "description": "High-density 4-column Antigravity Project & Idea Matrix for Dang Minh Tuan",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "author": "Dang Minh Tuan",
+  "license": "MIT"
+}
