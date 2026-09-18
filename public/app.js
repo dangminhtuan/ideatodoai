@@ -71,7 +71,7 @@ async function loadData() {
         state.categories = data.categories || [];
         state.isLocalServer = true;
         persistLocal();
-        syncLabel.textContent = 'Second Brain Sync';
+        syncLabel.textContent = 'Second Brain (Localhost)';
         updateCategoryDropdowns();
         renderStats();
         renderRows();
@@ -83,7 +83,7 @@ async function loadData() {
   }
 
   // 2. On Cloudflare Pages: Check user's own localStorage first (their private data)
-  syncLabel.textContent = 'Browser Local Storage';
+  syncLabel.textContent = 'Bộ nhớ máy bạn (Riêng tư)';
   const saved = localStorage.getItem('ag_projects_matrix');
   if (saved) {
     try {

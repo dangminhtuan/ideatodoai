@@ -38,7 +38,7 @@
 
       <!-- SYNC STATUS -->
       <div class="sync-pill" id="syncIndicator" title="Trạng thái lưu trữ dữ liệu">
-        <span class="sync-dot"></span> <span id="syncLabel">Local Storage</span>
+        <span class="sync-dot"></span> <span id="syncLabel">Bộ nhớ máy bạn (Riêng tư)</span>
       </div>
     </div>
   </header>
@@ -176,35 +176,35 @@
       </div>
 
       <div class="modal-body">
-        <!-- 1. KHO 5 MẪU PHONG CÁCH CHUYÊN BIỆT -->
+        <!-- 1. TỰ TẢI LÊN FILE JSON CỦA BẠN (ĐƯA LÊN TRÊN ĐẦU THEO Ý SẾP) -->
         <div class="section-title">
-          <span>✨ 1. CHỌN MẪU THEO PHONG CÁCH CỦA BẠN (Áp dụng tức thì)</span>
-        </div>
-        <div class="presets-grid" id="presetsGrid">
-          <!-- Rendered dynamically from presets.js -->
-        </div>
-
-        <!-- 2. TỰ TẢI LÊN FILE JSON CỦA RIÊNG BẠN -->
-        <div class="section-title" style="margin-top: 14px;">
-          <span>📂 2. HOẶC TỰ TẢI LÊN FILE JSON CỦA RIÊNG BẠN</span>
+          <span>📂 1. TẢI LÊN FILE JSON CỦA RIÊNG BẠN (Ưu tiên nạp dữ liệu cá nhân)</span>
         </div>
         <div class="upload-box" id="uploadBox">
           <div class="upload-content">
             <span class="upload-icon">📁</span>
             <div class="upload-text">
-              <strong>Kéo thả file .json vào đây</strong> hoặc bấm nút bên dưới
+              <strong>Kéo thả file .json vào đây</strong> hoặc bấm nút để chọn file từ máy tính / điện thoại
             </div>
-            <label class="btn btn-primary btn-sm" style="cursor: pointer; margin-top: 4px;">
-              Chọn file từ máy / điện thoại
+            <label class="btn btn-primary btn-sm" style="cursor: pointer; margin-top: 4px; font-size: 12px; padding: 6px 14px;">
+              📂 Chọn File JSON từ thiết bị của bạn
               <input type="file" id="modalFileInput" accept=".json" style="display: none;">
             </label>
           </div>
         </div>
 
-        <!-- 3. HƯỚNG DẪN PROMPT CHO AI ĐỂ GEN DATA RIÊNG -->
+        <!-- 2. KHO 10 MẪU PHONG CÁCH ĐA DẠNG NGÀNH NGHỀ -->
+        <div class="section-title" style="margin-top: 14px;">
+          <span>✨ 2. HOẶC CHỌN 1 TRONG 10 MẪU PHONG CÁCH CÓ SẴN (Áp dụng tức thì)</span>
+        </div>
+        <div class="presets-grid" id="presetsGrid">
+          <!-- 10 presets rendered dynamically from presets.js -->
+        </div>
+
+        <!-- 3. HƯỚNG DẪN PROMPT CHO AI ĐỂ TỰ GEN DATA RIÊNG -->
         <div class="ai-prompt-box">
           <div class="prompt-header">
-            <strong>🤖 Gợi ý Prompt: Cách biến file mẫu thành dự án thật của bạn bằng AI</strong>
+            <strong>🤖 Prompt Mẫu: Cách nhờ ChatGPT / Claude chuyển file mẫu thành dự án thật của bạn</strong>
             <button class="btn btn-secondary btn-xs" id="btnCopyPrompt">📋 Sao chép Prompt</button>
           </div>
           <div class="prompt-content" id="promptTextContent">
